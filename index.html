@@ -22,21 +22,23 @@
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	
 	<style>
-		/* CHUYỂN TOÀN BỘ VIỀN CAM SANG VIỀN XANH ĐẬM */
-		#header {
-			border-bottom: 2px solid #062a4d !important; /* Đường kẻ ngang phân cách */
-		}
-		
-		#container, #container2 {
-			border-top: 1px solid #062a4d !important; /* Đảm bảo đường kẻ ngang trên mobile/PC */
+		/* --- GHI ĐÈ TOÀN BỘ MÀU VIỀN TỪ CAM SANG XANH --- */
+		/* Đổi màu viền ngang (header), viền bao quanh (wrap) và viền dọc đứt nét giữa 2 cột (conts, sideBar) */
+		#header, .hBox, #container, #container2, #main, .wrap, #conts, #sideBar {
+			border-color: #2b88d8 !important;
 		}
 
-		/* Khung viền lớn bao bọc nội dung */
+		/* Phòng trường hợp viền đứt nét dùng phần tử ảo (pseudo-elements) trong CSS cũ */
+		#conts::after, #conts::before, #sideBar::after, #sideBar::before, .wrap::after, .wrap::before {
+			border-color: #2b88d8 !important;
+		}
+
+		/* Đổi màu bóng đổ của khung chính sang tông xanh */
 		.wrap {
-			border: 1px solid #0e3d6c !important; /* Đổi viền cam bao quanh thành xanh đậm */
-			box-shadow: 0 0 10px rgba(10, 58, 108, 0.3) !important; /* Bóng đổ nhẹ màu xanh */
+			box-shadow: 0 0 10px rgba(43, 136, 216, 0.4) !important;
 		}
 
+		/* --- CÁC HIỆU ỨNG KHÁC (GIỮ NGUYÊN) --- */
 		@keyframes scaleEffect {
 			0% { transform: scale(1.1); }
 			50% { transform: scale(1.2); }
